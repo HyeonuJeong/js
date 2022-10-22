@@ -1,22 +1,34 @@
-import World from "./3";
-import styles from "./Hello.module.css"
-
 export default function Hello(){
-    return( 
+            
+    function showName(){
+        console.log("Mikle")
+    }
+    function showAge(age){
+        console.log(age)
+    }
+    function showText(txt){
+        console.log(txt)
+    }
+
+    return(
+
     <div>
-        <h1 style={
-            {
-            color:'#f00',
-            borderRight:'12px solid #000',
-            marginBottom:'50px',
-            opacity:0.5,
-        }
-        }
+        <h1
         >
         Hello 
         </h1>
-
-        <div className={styles.box}>Hello</div>
+         <button onClick={showName}>show name</button>
+         <button 
+            onClick={()=>{
+                showAge(30)
+            }}
+            >
+                show age
+                </button>
+        <input type="text" onChange={(e)=>{
+            const txt = e.target.value
+            showText(txt)
+        }}></input>
     </div>
     )
 }
