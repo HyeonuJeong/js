@@ -1,34 +1,21 @@
+import { useState } from "react";
+
 export default function Hello(){
             
-    function showName(){
-        console.log("Mikle")
-    }
-    function showAge(age){
-        console.log(age)
-    }
-    function showText(txt){
-        console.log(txt)
-    }
+    // var name ="mike"
+    const [name, setName]=useState('mike')
+
 
     return(
 
     <div>
-        <h1
-        >
-        Hello 
-        </h1>
-         <button onClick={showName}>show name</button>
-         <button 
-            onClick={()=>{
-                showAge(30)
-            }}
-            >
-                show age
-                </button>
-        <input type="text" onChange={(e)=>{
-            const txt = e.target.value
-            showText(txt)
-        }}></input>
+
+        <h2 id="name">{name}</h2>
+        <button onClick={()=>{
+        setName(name==="mike"?"jane":"mike")
+        }}>change</button>
+
+      
     </div>
     )
 }
